@@ -1,69 +1,194 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-white text-zinc-900">
+      {/* Navigation */}
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
+        <div className="text-lg font-semibold">Xize Chen</div>
+
+        <div className="flex gap-6 text-sm text-zinc-600">
+          <a href="#about" className="hover:text-black">
+            About
+          </a>
+          <a href="#projects" className="hover:text-black">
+            Projects
+          </a>
+          <a href="#experience" className="hover:text-black">
+            Experience
+          </a>
+          <a href="#contact" className="hover:text-black">
+            Contact
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="mx-auto flex min-h-[80vh] max-w-5xl items-center px-6">
+        <div>
+          <p className="mb-4 text-sm font-medium text-zinc-500">
+            Computer Science @ UC San Diego
+          </p>
+
+          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            Hi, I&apos;m Xize.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
+            I&apos;m a Computer Science student interested in software
+            engineering, artificial intelligence, and hardware.
+          </p>
+
+          <div className="mt-8 flex gap-4">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#projects"
+              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              View My Work
+            </a>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium transition hover:bg-zinc-100"
             >
-              Learning
-            </a>{" "}
-            center.
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="border-t border-zinc-200 px-6 py-24"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold">About Me</h2>
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-600">
+            I&apos;m a first-year Computer Science student at UC San Diego.
+            I enjoy building software, exploring AI, and working on projects
+            that connect software with hardware.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Projects */}
+      <section
+        id="projects"
+        className="border-t border-zinc-200 px-6 py-24"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold">Projects</h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-200 p-6">
+              <h3 className="text-xl font-semibold">
+                Autonomous Blimp
+              </h3>
+
+              <p className="mt-3 leading-7 text-zinc-600">
+                Led a team to build a helium-powered blimp using Arduino,
+                Bluetooth communication, and propellers for remote control.
+              </p>
+
+              <p className="mt-4 text-sm text-zinc-500">
+                Arduino · Bluetooth · Hardware
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-200 p-6">
+              <h3 className="text-xl font-semibold">
+                Personal Portfolio
+              </h3>
+
+              <p className="mt-3 leading-7 text-zinc-600">
+                A personal website built with Next.js, TypeScript, and
+                Tailwind CSS.
+              </p>
+
+              <p className="mt-4 text-sm text-zinc-500">
+                Next.js · TypeScript · Tailwind CSS
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Experience */}
+      <section
+        id="experience"
+        className="border-t border-zinc-200 px-6 py-24"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold">Experience</h2>
+
+          <div className="mt-10 space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold">
+                Research Intern
+              </h3>
+              <p className="mt-1 text-zinc-500">
+                Institute of Semiconductors, Chinese Academy of Sciences
+              </p>
+              <p className="mt-3 max-w-3xl leading-7 text-zinc-600">
+                Worked on optoelectronic devices and integrated photonics,
+                including experimental data processing and analysis.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold">
+                Founder & President
+              </h3>
+              <p className="mt-1 text-zinc-500">
+                Hohhot No.2 High School Computer Science Club
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section
+        id="contact"
+        className="border-t border-zinc-200 px-6 py-24"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold">Let&apos;s Connect</h2>
+
+          <p className="mt-4 text-zinc-600">
+            Feel free to reach out or connect with me online.
+          </p>
+
+          <div className="mt-6 flex gap-5">
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-200 px-6 py-8">
+        <div className="mx-auto max-w-5xl text-sm text-zinc-500">
+          © 2026 Xize Chen. All rights reserved.
+        </div>
+      </footer>
+    </main>
   );
 }
