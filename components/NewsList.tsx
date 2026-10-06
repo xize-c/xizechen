@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { news } from "@/data/content";
 import Entry from "./Entry";
@@ -11,10 +12,15 @@ export default function NewsList() {
       <h2>News</h2>
       <ul className="list">{shown.map((n, i) => <Entry key={i} item={n} />)}</ul>
       {news.length > 3 && (
-        <button className="more" onClick={() => setOpen(!open)} aria-expanded={open}>
-          {open ? "收起" : `展开全部 (${news.length})`}
+        <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 8 }}>
+        <button className="more" style={{ marginTop: 0 }} onClick={() => setOpen(!open)} aria-expanded={open}>
+          {open ? "Collapse" : "Show more"}
         </button>
-      )}
+      {open && news.length > 5 && (
+    <Link href="/news" style={{ fontSize: ".85rem" }}>View all ({news.length})</Link>
+    )}
+  </div>
+)}
     </section>
   );
 }

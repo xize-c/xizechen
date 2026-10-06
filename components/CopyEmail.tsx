@@ -10,7 +10,7 @@ export default function CopyEmail({ email }: { email: string }) {
         className="copy"
         onClick={() => { navigator.clipboard.writeText(email); setOk(true); setTimeout(() => setOk(false), 1500); }}
       >
-        {ok ? "Successfully Copied" : "Copy"}
+        {ok ? "Copied" : "Copy"}
       </button>
     </p>
   );

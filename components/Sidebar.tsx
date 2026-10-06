@@ -8,6 +8,7 @@ export default function Sidebar() {
       <img className="avatar" src={profile.photo} alt={profile.name} />
       <h1>{profile.name}</h1>
       <p className="muted">{profile.school}</p>
+      <p className="muted">{profile.college}</p>
       <p className="muted">{profile.major}</p>
       <CopyEmail email={profile.email} />
       <CopyEmail email={profile.email_personal} />
